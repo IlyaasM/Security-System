@@ -1,0 +1,66 @@
+body{
+    background-color: #5a6770;
+    overflow: hidden;
+}
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #5a6770;
+}
+
+.path {
+  animation: draw 10s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes draw {
+  0% {
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+.main{
+    width: autos;
+    max-width: 500px;
+    border: solid #D1E3EF;
+    border-radius: 30px;
+    background-color: #7692a7;
+    text-align: center;
+    padding-bottom:10px;
+    margin: auto;
+    
+    
+}
+span{
+    color: red;
+}
+input{
+    font-size: 30px;
+    border-radius: 5px;
+    border: 2px solid rgb(96, 180, 169);
+}
+input::grammar-error{
+    border: 3px red;
+}
+.brand{
+    color: white;
+    top: 0px;
+    width:100%;
+    text-align: center;
+}
+.names{
+    color: white;
+    size: 100px;
+    background-color: #D6D6D6;
+    position:fixed;
+    left:0px;
+    bottom: 0px;
+    height: 60px;
+    width:100%;
+    background:#999;
+    text-align: center;
+}

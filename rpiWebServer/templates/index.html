@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>FortiPi- Control Panel</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class ="brand" style="font-size: 75px;">Forti<span style="color:red">Pi²</span></h1>
+        <form action="/unlock" method="post">
+                <h1>OPEN LOCK</h1>
+                <div style="text-align: center;">
+                    <button type="reset">CLOSE</button>
+                    <button type="submit">OPEN</button>
+                </div>
+                
+            </form>
+        <div class="update-dataset">
+            <form action="/uploadimgs" method="post" enctype="multipart/form-data">
+                <h1>Facial Recognition</h1>
+                <label for="name">Enter User's Name:</label>
+                <input type="text" name="name" required>
+                <br>
+                <label for="photos">Upload images to the dataset:</label>
+                <input type="file" id="imgs" name="imgs" accept="image/*" multiple required>
+                <br>
+                <button type="reset">Clear Images</button>
+                <button type="submit">Update Dataset</button>
+            </form>
+        </div>
+        <br>
+        
+        <div class="add-fob">
+            <form action="/write-fob" method="post">
+                <h1>RFID</h1>
+                <label>Enter User's Name:</label>
+                <input type="text" name="name" id="name" required>
+                <br>
+                <button type="reset">Clear Textbox</button>
+                <button type="submit">Adding Key to Database</button>
+            </form>
+        </div>
+        
+        <div class="log-file">
+            <h1>Entry Log</h1>
+            <ul id="log-list"></ul>
+            <script>
+                const logFileDiv = document.querySelector('.log-file');
+                const logList = document.getElementById('log-list');
+
+                fetch('../static/test.txt')
+                    .then(response => response.text())
+                    .then(text => {
+                        const lines = text.split('\n');
+                        lines.forEach(line => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = line;
+                            logList.appendChild(listItem);
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            </script>
+        </div>
+        <div class="latest-img" style="background-color: red ;">
+            <h1>Last Attempted Access</h1>
+            <script>
+                const imgElement = document.createElement('img');
+                imgElement.src = '../static/image.jpg';
+
+                const latestImgDiv = document.querySelector('.latest-img');
+                latestImgDiv.appendChild(imgElement);
+            </script>
+        </div>
+
+    </div>
+</body>
+
+</html>

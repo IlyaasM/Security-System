@@ -1,0 +1,134 @@
+/* Reset styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: rgba(136, 127, 127, 0.356);
+}
+
+/* Container styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: double lightgray;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+input[type="reset"],
+input[type="submit"],
+button {
+  display: inline-block;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:hover {
+  background-color: #0059b3;
+}
+
+input[type="reset"] {
+  margin-right: 10px;
+}
+
+/* Log file styles */
+.log-file {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-height: 400px;
+  position: relative;
+}
+
+.log-file h1 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#log-list {
+  list-style: square;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
+#log-list li {
+  margin-bottom: 5px;
+}
+
+/* Latest image styles */
+.latest-img {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.latest-img h1 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.latest-img img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+/*
+Fix to have items in 2 by 2 grid
+potential problem: when adding new features, the alignment may become uneven
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+*/
